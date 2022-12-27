@@ -1,0 +1,17 @@
+--- LOJA DE DISCOS ---
+
+Classes: Vinis.java, CDs.java
+Atributos: genero, artista, nome, data, preco
+FRETE FIXO
+Opcionais: Avaliacao, condicao
+IF ELSE disco importado ou não, se sim inserir taxa fixa ao preco
+
+Sistema de Estoque
+Gerado aleatorio
+
+Sistema de Login e Senha
+Cliente: Apenas compra
+Revendedor: Venda
+
+Forma de pagamento
+
