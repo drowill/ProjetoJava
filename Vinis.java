@@ -9,5 +9,3 @@ public class Vinis extends Discos {
         this.condicao = condicao;
     }
 }
-
-
