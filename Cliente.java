@@ -1,7 +1,6 @@
 public class Cliente extends Pessoa {
-    public Cliente(String user, String senha){
-        this.setUser(user);
-        this.setSenha(senha);
+    public void login(String user, String senha){
+        this.user = user;
+        this.senha = senha;
     }
-    
 }

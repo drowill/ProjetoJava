@@ -1,5 +1,5 @@
 public abstract class Pessoa {
-    private String user, senha;
+    protected String user, senha;
 
     public String getUser() {
         return user;

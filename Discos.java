@@ -1,5 +1,5 @@
 public abstract class Discos {
-    protected String nome, artista, data;
+    protected String nome, artista;
     protected double preco;
     
     public String getNome() {
@@ -16,14 +16,6 @@ public abstract class Discos {
 
     public void setArtista(String artista) {
         this.artista = artista;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
     }
 
     public double getPreco() {
