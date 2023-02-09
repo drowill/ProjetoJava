@@ -6,8 +6,9 @@ public class Main {
         ArrayList<Discos> d = new ArrayList<Discos>();
         CDs cd = new CDs();
         Vinis v = new Vinis();
+        double precoTotal=0;
 
-        System.out.println("--- BEM VINDO A LOJA DE DISCOS ---\n");
+        System.out.println("--- BEM VINDO A LOJA DISCMANIA ---\n");
 
         System.out.println("---- LOGIN ----");
         System.out.println("Usuário:");
@@ -16,7 +17,7 @@ public class Main {
         String password = sc.nextLine();
 
         System.out.println("Insira o tipo de conta");
-        System.out.println("1. Cliente\n2. Vendedor\n");
+        System.out.println("1. Cliente\n2. Vendedor");
         int resposta = sc.nextInt();
 
         switch (resposta) {
@@ -31,7 +32,7 @@ public class Main {
 
                     while (auxi != true){
                         System.out.println("O que deseja comprar?");
-                        System.out.println("1. Vinil\n2. CD\n3.Finalizar");
+                        System.out.println("1. Vinil\n2. CD");
                         int tipo = sc.nextInt();
                         if (tipo == 1){
                             System.out.println("--- VINIL ---");
@@ -46,8 +47,17 @@ public class Main {
                             if (x == 1){
                                 v.setCondicao(true);
                             }
-                            d.add(v);
-                            auxi = true;
+                            System.out.println("\nPreco do produto: R$" + v.getPreco());
+                            System.out.println("Voce deseja adicionar ao carrinho?\n1.Sim\n2.Nao");
+                            int resp = sc.nextInt();
+                            if (resp == 1) {
+                                System.out.println("Produto adicionado ao carrinho");
+                                d.add(v);
+                                auxi = true;
+                            } else if (resp == 2){
+                                System.out.println("Produto nao adicionado ao carrinho");
+                                auxi = true;
+                            }
                         } else if (tipo == 2) {
                             System.out.println("--- CD ---");
                             sc.nextLine();
@@ -61,11 +71,17 @@ public class Main {
                             if (x == 1){
                                 cd.setEdicao(true);
                             }
-                            d.add(cd);
-                            auxi = true;
-                        } else if(tipo == 3){
-                            System.out.println("-----Finalizando----");
-                            end = true;
+                            System.out.println("\nPreco do produto: R$" + cd.getPreco());
+                            System.out.println("Voce deseja adicionar ao carrinho?\n1.Sim\n2.Nao");
+                            int resp = sc.nextInt();
+                            if (resp == 1) {
+                                System.out.println("Produto adicionado ao carrinho");
+                                d.add(cd);
+                                auxi = true;
+                            } else if (resp == 2){
+                                System.out.println("Produto nao adicionado ao carrinho");
+                                auxi = true;
+                            }
                         } else {
                             System.out.println("INSIRA UM NUMERO VALIDO");
                             auxi = false;
@@ -83,8 +99,15 @@ public class Main {
                 System.out.println("--- CARRINHO ---");
                 for (int i = 0; i < d.size(); i++) {
                     System.out.println(d.get(i));
+                    precoTotal = precoTotal + d.get(i).getPreco();
                 }
-
+                if (d.isEmpty()){
+                    System.out.println("CARRINHO VAZIO");
+                } else {
+                    System.out.println("FRETE FIXO: R$5.0");
+                    precoTotal = precoTotal + 5;
+                    System.out.println("Preco Total a pagar: R$" + precoTotal);
+                }
                 break;
         
             case 2:
@@ -98,7 +121,7 @@ public class Main {
 
                     while (auxi != true){
                         System.out.println("Qual produto deseja registrar?");
-                        System.out.println("1. Vinil\n2. CD\n3.Finalizar");
+                        System.out.println("1. Vinil\n2. CD");
                         int tipo = sc.nextInt();
                         if (tipo == 1){
                             System.out.println("--- VINIL ---");
@@ -134,9 +157,6 @@ public class Main {
                             cd.setPreco(sc.nextDouble());
                             d.add(cd);
                             auxi = true;
-                        } else if(tipo == 3){
-                            System.out.println("-----Finalizando----");
-                            fim = true;
                         } else {
                             System.out.println("INSIRA UM NUMERO VALIDO");
                             auxi = false;

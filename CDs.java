@@ -10,6 +10,10 @@ public class CDs extends Discos {
         return edicao;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
     public void setEdicao(boolean edicao) {
         this.edicao = edicao;
         if (edicao = true){
@@ -19,7 +23,7 @@ public class CDs extends Discos {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\nArtista: " + this.artista + "\nPreco: " + this.preco+ "\n";
+        return "Nome: " + this.nome + "\nArtista: " + this.artista + "\nPreco: R$" + this.preco+ "\n";
     }
 
 }
