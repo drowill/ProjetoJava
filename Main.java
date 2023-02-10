@@ -4,8 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Discos> d = new ArrayList<Discos>();
-        CDs cd = new CDs();
-        Vinis v = new Vinis();
         double precoTotal=0;
 
         System.out.println("--- BEM VINDO A LOJA DISCMANIA ---\n");
@@ -36,6 +34,7 @@ public class Main {
                         int tipo = sc.nextInt();
                         if (tipo == 1){
                             System.out.println("--- VINIL ---");
+                            Vinis v = new Vinis();
                             sc.nextLine();
                             System.out.println("Insira o nome do vinil");
                             v.setNome(sc.nextLine());
@@ -59,6 +58,7 @@ public class Main {
                                 auxi = true;
                             }
                         } else if (tipo == 2) {
+                            CDs cd = new CDs();
                             System.out.println("--- CD ---");
                             sc.nextLine();
                             System.out.println("Insira o nome do CD");
@@ -125,6 +125,7 @@ public class Main {
                         int tipo = sc.nextInt();
                         if (tipo == 1){
                             System.out.println("--- VINIL ---");
+                            Vinis v = new Vinis();
                             sc.nextLine();
                             System.out.println("Insira o nome do vinil");
                             v.setNome(sc.nextLine());
@@ -142,6 +143,7 @@ public class Main {
                             auxi = true;
                         } else if (tipo == 2) {
                             System.out.println("--- CD ---");
+                            CDs cd = new CDs();
                             sc.nextLine();
                             System.out.println("Insira o nome do CD");
                             cd.setNome(sc.nextLine());
@@ -179,6 +181,5 @@ public class Main {
         }
 
     }
-
 
 }
